@@ -1,0 +1,455 @@
+/* ==========================================================================
+   StudyHub Global Styles & Design System
+   Theme: Navy Blue, White, and Light Blue
+   Supports Light & Dark Modes + Accessible Typography
+   ========================================================================== */
+
+:root {
+  /* Navy Color Palette */
+  --navy-950: #061121;
+  --navy-900: #0b1a30;
+  --navy-850: #0f2442;
+  --navy-800: #142e54;
+  --navy-700: #1b3d6f;
+  --navy-600: #255294;
+
+  /* Light Blue Accents */
+  --blue-500: #0284c7;
+  --blue-400: #38bdf8;
+  --blue-300: #7dd3fc;
+  --blue-200: #bae6fd;
+  --blue-100: #e0f2fe;
+  --blue-50: #f0f9ff;
+
+  /* Neutrals & Surfaces (Default Light Mode) */
+  --white: #ffffff;
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-card-subtle: #f1f5f9;
+  --border-light: #e2e8f0;
+  --border-focus: #38bdf8;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+
+  /* Accent highlights */
+  --accent-amber: #d97706;
+  --accent-amber-bg: #fef3c7;
+  --accent-green: #059669;
+  --accent-green-bg: #d1fae5;
+  --accent-rose: #e11d48;
+  --accent-rose-bg: #ffe4e6;
+  --accent-purple: #7c3aed;
+  --accent-purple-bg: #ede9fe;
+
+  /* Typography */
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(15 23 42 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(15 23 42 / 0.08), 0 2px 4px -2px rgb(15 23 42 / 0.05);
+  --shadow-lg: 0 10px 15px -3px rgb(15 23 42 / 0.08), 0 4px 6px -4px rgb(15 23 42 / 0.04);
+  --shadow-xl: 0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.06);
+  --shadow-glow: 0 0 25px -5px rgba(56, 189, 248, 0.35);
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Layout */
+  --max-width: 1240px;
+  --header-height: 72px;
+}
+
+/* ==========================================================================
+   Dark Mode Theme Overrides
+   ========================================================================== */
+[data-theme="dark"] {
+  --bg-main: #061121;
+  --bg-card: #0b1a30;
+  --bg-card-subtle: #0f2442;
+  --border-light: rgba(56, 189, 248, 0.2);
+  --border-focus: #38bdf8;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-light: #64748b;
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+  color: #ffffff;
+}
+
+[data-theme="dark"] p {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .class-grid-section,
+[data-theme="dark"] .class-detail-page,
+[data-theme="dark"] .subject-detail-page,
+[data-theme="dark"] .chapter-detail-page {
+  background-color: var(--bg-main);
+}
+
+[data-theme="dark"] .class-card,
+[data-theme="dark"] .subject-card,
+[data-theme="dark"] .chapter-item-card,
+[data-theme="dark"] .notes-paper-card,
+[data-theme="dark"] .mcq-card,
+[data-theme="dark"] .mcq-top-bar,
+[data-theme="dark"] .question-card,
+[data-theme="dark"] .revision-card,
+[data-theme="dark"] .sample-paper-card,
+[data-theme="dark"] .search-modal-container,
+[data-theme="dark"] .bookmarks-modal-card,
+[data-theme="dark"] .demo-modal-card {
+  background-color: var(--bg-card);
+  border-color: rgba(56, 189, 248, 0.22);
+}
+
+[data-theme="dark"] .breadcrumb-bar,
+[data-theme="dark"] .resource-tabs-bar,
+[data-theme="dark"] .stream-selector-section {
+  background-color: rgba(11, 26, 48, 0.95);
+  border-color: rgba(56, 189, 248, 0.18);
+}
+
+[data-theme="dark"] .key-point-item,
+[data-theme="dark"] .search-item-card,
+[data-theme="dark"] .bookmark-item,
+[data-theme="dark"] .rev-point-card,
+[data-theme="dark"] .mcq-option-btn,
+[data-theme="dark"] .chapter-search-box {
+  background-color: rgba(15, 36, 66, 0.7);
+  border-color: rgba(56, 189, 248, 0.18);
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] .btn-outline {
+  background: rgba(15, 36, 66, 0.8);
+  color: #e2e8f0;
+  border-color: rgba(56, 189, 248, 0.25);
+}
+
+[data-theme="dark"] .btn-outline:hover {
+  background: rgba(25, 58, 105, 0.9);
+  color: #ffffff;
+  border-color: var(--blue-400);
+}
+
+[data-theme="dark"] .res-tab-btn {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .res-tab-btn:hover {
+  color: #ffffff;
+  background: rgba(56, 189, 248, 0.15);
+}
+
+[data-theme="dark"] .opt-letter {
+  background: #1e293b;
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .class-stage-badge {
+  background: #1e293b;
+  color: #93c5fd;
+}
+
+/* ==========================================================================
+   Base Reset
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-body);
+  color: var(--text-main);
+  background-color: var(--bg-main);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  font-size: 1rem;
+}
+
+/* Accessible Large Text Option */
+body.accessible-large-text {
+  font-size: 1.12rem;
+}
+body.accessible-large-text p {
+  font-size: 1.15rem !important;
+  line-height: 1.7;
+}
+body.accessible-large-text .btn {
+  font-size: 1.05rem;
+  padding: 0.75rem 1.4rem;
+}
+body.accessible-large-text .notes-overview-text,
+body.accessible-large-text .kp-text,
+body.accessible-large-text .mcq-question-text {
+  font-size: 1.25rem !important;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Typography styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--navy-900);
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+p {
+  color: #334155;
+}
+
+a {
+  color: var(--blue-500);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--navy-700);
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+input, select, textarea {
+  font-family: var(--font-body);
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.02em;
+}
+
+.badge-navy {
+  background: var(--blue-100);
+  color: var(--navy-800);
+  border: 1px solid var(--blue-200);
+}
+
+[data-theme="dark"] .badge-navy {
+  background: rgba(56, 189, 248, 0.2);
+  color: #7dd3fc;
+  border-color: rgba(56, 189, 248, 0.35);
+}
+
+.badge-primary {
+  background: linear-gradient(135deg, var(--navy-800), var(--navy-900));
+  color: var(--white);
+}
+
+.badge-stream {
+  background: #f1f5f9;
+  color: var(--navy-700);
+  font-size: 0.7rem;
+  border: 1px solid #cbd5e1;
+}
+
+.badge-demo {
+  background: #fff7ed;
+  color: #c2410c;
+  border: 1px solid #fed7aa;
+}
+
+/* Button variants */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.925rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--navy-800), var(--navy-900));
+  color: var(--white);
+  box-shadow: 0 4px 12px rgba(15, 36, 66, 0.25);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--navy-700), var(--navy-850));
+  box-shadow: 0 6px 16px rgba(15, 36, 66, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-accent {
+  background: linear-gradient(135deg, var(--blue-500), #0ea5e9);
+  color: var(--white);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+}
+
+.btn-accent:hover {
+  background: linear-gradient(135deg, #0284c7, #38bdf8);
+  box-shadow: 0 6px 18px rgba(56, 189, 248, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: var(--white);
+  color: var(--navy-800);
+  border: 1px solid var(--border-light);
+}
+
+.btn-outline:hover {
+  background: var(--blue-50);
+  border-color: var(--blue-300);
+  color: var(--navy-900);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-muted);
+}
+
+.btn-ghost:hover {
+  background: var(--blue-50);
+  color: var(--navy-900);
+}
+
+/* Demo Notice Banner */
+.demo-banner {
+  background: linear-gradient(90deg, #fffbeb, #fef3c7);
+  border-bottom: 1px solid #fde68a;
+  color: #92400e;
+  padding: 0.5rem 1rem;
+  font-size: 0.825rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+[data-theme="dark"] .demo-banner {
+  background: linear-gradient(90deg, #451a03, #78350f);
+  border-bottom: 1px solid #b45309;
+  color: #fef3c7;
+}
+
+.demo-banner strong {
+  font-weight: 700;
+  color: #78350f;
+}
+
+[data-theme="dark"] .demo-banner strong {
+  color: #fde68a;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: #061121;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: #1e3a5f;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Print styles for study notes */
+@media print {
+  header, footer, .no-print, .breadcrumb, .nav-actions, .demo-banner, .studybuddy-floating-btn {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .container {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+}
